@@ -1,4 +1,4 @@
-$RetroArchPath = "C:\RetroArch"
+$RetroArchPath = "C:\Gry\RetroArchLib"
 
 echo "RetroArch Slav installator"
 
@@ -22,10 +22,12 @@ catch [System.Management.Automation.CommandNotFoundException]
 
 }
 
-if (Test-Path "C:\RetroArch")
+if (Test-Path $RetroArchPath)
 {
     echo "Removing last RetroArch"
     Remove-Item $RetroArchPath -Recurse -Force
 }
 
+
 git clone --branch main https://github.com/slaweksystem/RetroArch.git $RetroArchPath
+powershell "$RetroArchPath\RetroArch-Setup.ps1"
