@@ -31,3 +31,6 @@ if (Test-Path $RetroArchPath)
 
 git clone --branch main https://github.com/slaweksystem/RetroArch.git $RetroArchPath
 powershell "$RetroArchPath\RetroArch-Setup.ps1"
+
+Write-Host 'Press any key to continue ...'
+Write-Host -Object ('The key that was pressed was: {0}' -f [System.Console]::ReadKey().Key.ToString());
